@@ -1,0 +1,13 @@
+name: environment-from-branchname
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  environment-from-branchname:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set environment variable `BRANCH`
+        shell: bash
+        run: echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
