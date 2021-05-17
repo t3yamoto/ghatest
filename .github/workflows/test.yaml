@@ -11,3 +11,8 @@ jobs:
       - name: Set environment variable `BRANCH`
         shell: bash
         run: echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+      - uses: actions/checkout@v2
+      - name: a
+        shell: bash
+        run: git branch
+        
